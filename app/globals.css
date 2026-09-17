@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #FBFBFE;
+    --foreground: #232338;
+  }
+
+  body {
+    background-color: #FBFBFE;
+    color: #232338;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F7FF;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9BFFC;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B7AF7;
+}
+
+/* Card aesthetics */
+.coursue-card {
+  background: #FFFFFF;
+  border: 1px solid #EEEEF4;
+  border-radius: 20px;
+}
+
+.coursue-card-interactive {
+  background: #FFFFFF;
+  border: 1px solid #EEEEF4;
+  border-radius: 20px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.coursue-card-interactive:hover {
+  border-color: #C9BFFC;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(115, 96, 232, 0.08);
+}
+
+/* Hero banner sparkles & gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #7360E8 0%, #5B48C7 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* 3D Flip Card for Digital Membership */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #FFFFFF !important;
+  }
+}
